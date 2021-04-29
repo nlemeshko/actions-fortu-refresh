@@ -4,9 +4,6 @@ inputs:
   token:
     description: 'Token'
     required: true
-  site:
-    description: 'Site'
-    required: true
   chart:
     description: 'Chart'
     required: true
