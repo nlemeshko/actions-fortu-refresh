@@ -21,6 +21,5 @@ runs:
         SITE=${{ inputs.site }}
         CHART=${{ inputs.chart }}
         VERSION=${{ inputs.version }}
-      shell: bash
-    - run: ${{ github.action_path }}/start.sh
+        ${{ github.action_path }}/start.sh
       shell: bash
