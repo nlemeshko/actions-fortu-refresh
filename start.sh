@@ -1,12 +1,13 @@
 #!/bin/bash
 
-
-while true; do
-    curl "$SITE" -H "Accept: application/json" -H "Authorization: Bearer $TOKEN" > out.json
+x=1
+while [ $x -le 5 ]; do
+    curl "$TOKEN" > out.json
     line=$(cat out.json | jq -r '.entries | ."'$CHART'" | .[] | .version' | grep $VERSION)
     if [ "$line" == "" ]; then
         echo "Charts no found yet."
-        sleep 5
+        x=$(( $x + 1 ))
+        sleep 25
     else
         echo "Found."
         break
