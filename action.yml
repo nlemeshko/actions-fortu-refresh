@@ -1,0 +1,26 @@
+name: 'Fortu Refresh Charts'
+description: 'Refresh helm chart until not found.'
+inputs:
+  token:
+    description: 'Token'
+    required: true
+  site:
+    description: 'Site'
+    required: true
+  chart:
+    description: 'Chart'
+    required: true
+  version:
+    description: 'Version'
+    required: true
+runs:
+  using: "composite"
+  steps:
+    - run: 
+        TOKEN=${{ inputs.token }}
+        SITE=${{ inputs.site }}
+        CHART=${{ inputs.chart }}
+        VERSION=${{ inputs.version }}
+      shell: bash
+    - run: ${{ github.action_path }}/start.sh
+      shell: bash
