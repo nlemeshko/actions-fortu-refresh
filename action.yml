@@ -15,7 +15,8 @@ runs:
   steps:
     - run: 
         TOKEN=${{ inputs.token }}
-        CHART="," read -a myarray <<< ${{ inputs.chart }}
+        CHART=${{ inputs.chart }}
+        CHART=($CHART)
         VERSION=${{ inputs.version }}
         ${{ github.action_path }}/start.sh
       shell: bash
