@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo $CHART
+echo ${CHART[0]}
 
 x=1
 y=0
@@ -10,7 +10,7 @@ while [ $x -le 5 ]; do
         break
     else
         curl "$TOKEN" > out.json
-        line=$(cat out.json | jq -r '.entries | ."'$CHART'" | .[] | .version' | grep $VERSION)
+        line=$(cat out.json | jq -r '.entries | ."'${CHART[$y]}'" | .[] | .version' | grep $VERSION)
         if [ "$line" == "" ]; then
             echo "Charts no found yet."
             x=$(( $x + 1 ))
