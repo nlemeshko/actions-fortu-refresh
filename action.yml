@@ -16,9 +16,6 @@ runs:
     - run: 
         TOKEN=${{ inputs.token }}
         CHART=${{ inputs.chart }}
-        echo $CHART
-        #CHART=($CHART)
-        #echo $CHART
         VERSION=${{ inputs.version }}
-        #${{ github.action_path }}/start.sh
+        ${{ github.action_path }}/start.sh
       shell: bash
