@@ -15,7 +15,7 @@ runs:
   steps:
     - run: 
         TOKEN=${{ inputs.token }}
-        CHART=${{ inputs.chart }}
+        CHART=$(echo ${{ inputs.chart }})
         VERSION=${{ inputs.version }}
         ${{ github.action_path }}/start.sh
       shell: bash

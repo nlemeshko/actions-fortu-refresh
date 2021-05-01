@@ -1,6 +1,5 @@
 #!/bin/bash
 
-CHART=($CHART)
 x=1
 y=0
 while [ $x -le 5 ]; do
