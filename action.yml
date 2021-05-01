@@ -14,7 +14,7 @@ runs:
   using: "composite"
   steps:
     - run: 
-        TOKEN=${{ inputs.token }}
+        TOKEN=$(echo ${{ inputs.token }} | sed 's/(//g' | sed 's/)//g')
         CHART=${{ inputs.chart }}
         VERSION=${{ inputs.version }}
         ${{ github.action_path }}/start.sh

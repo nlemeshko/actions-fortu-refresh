@@ -2,7 +2,6 @@
 
 x=1
 y=0
-echo $TOKEN
 while [ $x -le 5 ]; do
     if [ -z "${CHART[$y]}" ]
     then
