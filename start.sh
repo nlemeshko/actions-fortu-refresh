@@ -2,8 +2,7 @@
 
 x=1
 y=0
-
-while [ $x -le 10 ]; do
+while [ $x -le 5 ]; do
     if [ -z "${CHART[$y]}" ]
     then
         break
@@ -13,9 +12,10 @@ while [ $x -le 10 ]; do
         if [ "$line" == "" ]; then
             echo "Charts no found yet."
             x=$(( $x + 1 ))
-            sleep 25
+            sleep 1
         else
             echo "Found."
+            x=1
             y=$(( $y + 1 ))
         fi
     fi
