@@ -14,8 +14,8 @@ runs:
   using: "composite"
   steps:
     - run: 
-        TOKEN=$(echo (${{ inputs.token }}))
-        CHART=${{ inputs.chart }}
+        TOKEN=${{ inputs.token }}
+        CHART=(${{ inputs.chart }})
         VERSION=${{ inputs.version }}
         ${{ github.action_path }}/start.sh
       shell: bash
