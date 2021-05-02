@@ -2,6 +2,9 @@
 
 x=1
 y=0
+echo ${CHART[0]}
+CHART=($CHART)
+
 while [ $x -le 5 ]; do
     if [ -z "${CHART[$y]}" ]
     then
