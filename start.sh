@@ -14,7 +14,7 @@ while [ $x -le 5 ]; do
         if [ "$line" == "" ]; then
             echo "Charts no found yet."
             x=$(( $x + 1 ))
-            sleep 1
+            sleep 25
         else
             echo "Found."
             x=1
